@@ -50,3 +50,31 @@ navbarFooterDOM.innerHTML=navItem.filter(item=>item.section == 'footer').map((it
     </div>
     </a>`
 })).join('');
+
+
+/*Creating Stories*/
+const users = [
+    {id:1, username:"insta"},
+    {id:2, username:"twitter"},
+    {id:3, username:"youTube"},
+    {id:4, username:"spotify"},
+    {id:5, username:"bluesky"},
+    {id:6, username:"chatGpt"},
+    {id:7, username:"x"},
+    {id:8, username:"snapchat"},
+    {id:9, username:"ekşi"},
+    {id:10, username:"whatsapp"},
+    {id:11, username:"threads"},
+]
+const storiesDOM = document.querySelector('.stories');
+storiesDOM.innerHTML=users.map(index=>{
+    return `
+    <div class="story-item text-center mx-2">
+        <div class="story-circle">
+            <img src="https://picsum.photos/id/${index.id+23}/56/56" class="rounded-circle border p-1" alt="story">
+        </div>
+        <small class="text-light">${index.username}</small>
+    </div>
+`
+}).join('');
+
