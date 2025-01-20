@@ -54,12 +54,12 @@ navbarFooterDOM.innerHTML=navItem.filter(item=>item.section == 'footer').map((it
 
 /*Creating Stories*/
 const users = [
-    {id:1, username:"insta"},
+    {id:1, username:"instagram"},
     {id:2, username:"twitter"},
-    {id:3, username:"youTube"},
+    {id:3, username:"youtube"},
     {id:4, username:"spotify"},
     {id:5, username:"bluesky"},
-    {id:6, username:"chatGpt"},
+    {id:6, username:"chatgpt"},
     {id:7, username:"x"},
     {id:8, username:"snapchat"},
     {id:9, username:"ekşi"},
@@ -71,10 +71,16 @@ storiesDOM.innerHTML=users.map(index=>{
     return `
     <div class="story-item text-center mx-2">
         <div class="story-circle">
-            <img src="https://picsum.photos/id/${index.id+23}/56/56" class="rounded-circle border p-1" alt="story">
+            <img src="https://picsum.photos/id/${index.id+23}/56/56" class="rounded-circle story-border p-1" alt="story">
         </div>
         <small class="text-light">${index.username}</small>
     </div>
 `
 }).join('');
+
+const postsDOM = document.querySelector('.posts');
+postsDOM.innerHTML=`<img src="https://picsum.photos/id/23/45/45" class="rounded-circle p-1" alt="profile">
+                            <smal class="d-flex ml-1 mr-2 text-light">webtekno</smal>
+                            <li class="text-white-50">33s</li>
+                            <img src="https://img.icons8.com/?size=25&id=61873&format=png&color=ffffff" >`
 

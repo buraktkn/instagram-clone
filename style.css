@@ -59,3 +59,10 @@ body{
     border-radius: 7px;
 }
 
+.story-border{
+    border:1px solid orangered !important;
+}
+
+.posts img:last-child {
+    margin-left: auto; 
+}
