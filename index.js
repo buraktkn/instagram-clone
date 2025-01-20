@@ -78,9 +78,6 @@ storiesDOM.innerHTML=users.map(index=>{
 `
 }).join('');
 
-const postsDOM = document.querySelector('.posts');
-postsDOM.innerHTML=`<img src="https://picsum.photos/id/23/45/45" class="rounded-circle p-1" alt="profile">
-                            <smal class="d-flex ml-1 mr-2 text-light">webtekno</smal>
-                            <li class="text-white-50">33s</li>
-                            <img src="https://img.icons8.com/?size=25&id=61873&format=png&color=ffffff" >`
+// const postsDOM = document.querySelector('.posts');
+// postsDOM.innerHTML=``
 
