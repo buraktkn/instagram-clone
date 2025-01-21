@@ -78,18 +78,53 @@ storiesDOM.innerHTML=users.map(index=>{
 `
 }).join('');
 
+
+/*Creating Post */
+const postInfo = [
+    {
+        profileImg : 29,
+        userName : "webtekno",
+        shareTime:35,
+        postImageLink:9,
+        likeNumberPost:67,
+        verifyStatus:true,
+        postDescription:"10 saniyede 100 metre koşabilen robot köpek geliştirildi. 10 saniyede 100 metre koşabilen robot köpek geliştirildi.🥶",
+        numberOfComment:35
+    },
+    {
+        profileImg : 77,
+        userName : "tekinnburakk",
+        shareTime:36,
+        postImageLink:316,
+        likeNumberPost:79,
+        verifyStatus:true,
+        postDescription:"10 saniyede 100 metre koşabilen robot köpek geliştirildi. 10 saniyede 100 metre koşabilen robot köpek geliştirildi.🥶",
+        numberOfComment:53
+    },
+    {
+        profileImg : 45,
+        userName : "chatgpt",
+        shareTime:36,
+        postImageLink:216,
+        likeNumberPost:59,
+        verifyStatus:true,
+        postDescription:"10 saniyede 100 metre koşabilen robot köpek geliştirildi. 10 saniyede 100 metre koşabilen robot köpek geliştirildi.🥶",
+        numberOfComment:3
+    }
+];
 const postsDOM = document.querySelector('.posts');
-postsDOM.innerHTML=`<!--Post Header Field-->
+postsDOM.innerHTML=postInfo.map(item => {
+    return `<!--Post Header Field-->
                         <div class="mt-4 d-flex px-5 align-items-center">
-                            <img src="https://picsum.photos/id/23/45/45" class="rounded-circle story-border p-1" alt="profile">
-                            <smal class="d-flex ml-1 mr-1 text-light">webtekno</smal>
+                            <img src="https://picsum.photos/id/${item.profileImg}/45/45" class="rounded-circle story-border p-1" alt="profile">
+                            <smal class="d-flex ml-1 mr-1 text-light">${item.userName}</smal>
                             <img class="mr-2" src="https://img.icons8.com/?size=15&id=36872&format=png&color=359BF7">
-                            <li class="text-white-50">33s</li>
+                            <li class="text-white-50">${item.shareTime}s</li>
                             <img src="https://img.icons8.com/?size=25&id=61873&format=png&color=ffffff">
                         </div>
                         <!--Post Image Field-->
                         <div class="mt-1 d-flex px-5 align-items-center">
-                            <img src="https://picsum.photos/seed/picsum/500/500" class="border border-secondary" >
+                            <img src="https://picsum.photos/id/${item.postImageLink}/500/500" class="border border-secondary" >
                         </div>
                         <!--Post Action Field-->
                         <div class="mt-1 d-flex  align-items-center">
@@ -99,20 +134,21 @@ postsDOM.innerHTML=`<!--Post Header Field-->
                             <img class="pr-4" src="https://img.icons8.com/?size=25&id=82461&format=png&color=ffffff">
                         </div>
                         <!--Post Like Count Field-->
-                        <div class="mt-1 d-flex px-5 align-items-center text-light"><small>35 beğenme</small></div>
+                        <div class="mt-1 d-flex px-5 align-items-center text-light"><small>${item.likeNumberPost} beğenme</small></div>
                         <!--Post Description Field-->
                         <div class="mt-1  px-5 align-items-center text-light">
-                            <small ><b>webtekno</b></small>
+                            <small ><b>${item.userName}</b></small>
                             <img src="https://img.icons8.com/?size=15&id=36872&format=png&color=359BF7">
-                            <small> 10 saniyede 100 metre koşabilen robot köpek geliştirildi. 10 saniyede 100 metre koşabilen robot köpek geliştirildi.🥶</small>
+                            <small> ${item.postDescription}</small>
                         </div>
                         <!--Post Comments See Field-->
                         <div class="mt-1  px-5 align-items-center text-secondary">
-                            <small class="mr-2">82 yorumun tümünü gör</small>
+                            <small class="mr-2">${item.numberOfComment} yorumun tümünü gör</small>
                         </div>
                         <!--Post Comments Field-->
                         <div class="mt-1 d-flex  align-items-center text-secondary">
                             <small class="mr-2 px-5">Yorum ekle..</small>
                             <img src="https://img.icons8.com/?size=15&id=-Znk8-vv55Es&format=png&color=ffffff" class="px-4">
                         </div>`
+}) 
 
