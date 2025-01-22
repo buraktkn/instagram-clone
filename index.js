@@ -71,7 +71,7 @@ storiesDOM.innerHTML=users.map(index=>{
     return `
     <div class="story-item text-center mx-2">
         <div class="story-circle">
-            <img src="https://picsum.photos/id/${index.id+23}/56/56" class="rounded-circle story-border p-1" alt="story">
+            <img src="https://picsum.photos/id/${index.id+23}/56/56" class="rounded-circle story-border" alt="story">
         </div>
         <small class="text-light">${index.username}</small>
     </div>
@@ -110,13 +110,34 @@ const postInfo = [
         verifyStatus:true,
         postDescription:"10 saniyede 100 metre koşabilen robot köpek geliştirildi. 10 saniyede 100 metre koşabilen robot köpek geliştirildi.🥶",
         numberOfComment:3
-    }
+    },
+    {
+        profileImg : 29,
+        userName : "webtekno",
+        shareTime:35,
+        postImageLink:9,
+        likeNumberPost:67,
+        verifyStatus:true,
+        postDescription:"10 saniyede 100 metre koşabilen robot köpek geliştirildi. 10 saniyede 100 metre koşabilen robot köpek geliştirildi.🥶",
+        numberOfComment:35
+    },
+    {
+        profileImg : 77,
+        userName : "tekinnburakk",
+        shareTime:36,
+        postImageLink:316,
+        likeNumberPost:79,
+        verifyStatus:true,
+        postDescription:"10 saniyede 100 metre koşabilen robot köpek geliştirildi. 10 saniyede 100 metre koşabilen robot köpek geliştirildi.🥶",
+        numberOfComment:53
+    },
 ];
 const postsDOM = document.querySelector('.posts');
 postsDOM.innerHTML=postInfo.map(item => {
     return `<!--Post Header Field-->
+                        <hr color="#232323" class="mt-2" style="width:90%">
                         <div class="mt-4 d-flex px-5 align-items-center">
-                            <img src="https://picsum.photos/id/${item.profileImg}/45/45" class="rounded-circle story-border p-1" alt="profile">
+                            <img src="https://picsum.photos/id/${item.profileImg}/45/45" class="rounded-circle story-border" alt="profile">
                             <smal class="d-flex ml-1 mr-1 text-light">${item.userName}</smal>
                             <img class="mr-2" src="https://img.icons8.com/?size=15&id=36872&format=png&color=359BF7">
                             <li class="text-white-50">${item.shareTime}s</li>
@@ -150,5 +171,49 @@ postsDOM.innerHTML=postInfo.map(item => {
                             <small class="mr-2 px-5">Yorum ekle..</small>
                             <img src="https://img.icons8.com/?size=15&id=-Znk8-vv55Es&format=png&color=ffffff" class="px-4">
                         </div>`
-}) 
+}).join('')
 
+// const accountDetailDOM = document.querySelector('.account-detail');
+// accountDetailDOM.innerHTML=`<img src="https://picsum.photos/id/23/45/45" class="rounded-circle" alt="profile">
+//                     <smal class="d-flex ml-3 text-light fw-lighter">dev_software</smal>
+//                     <a href="#">Geçiş yap</a>`
+
+const reccomendAccount = [
+    {
+        photoId:2,
+        userName:"tekinnburakk",
+        follower:"dev_software"
+    },
+    {
+        photoId:45,
+        userName:"sudeyondem",
+        follower:"dev_software"
+    },
+    {
+        photoId:53,
+        userName:"acebe_",
+        follower:"dev_software"
+    },
+    {
+        photoId:68,
+        userName:"a.smttkn",
+        follower:"dev_software"
+    },
+    {
+        photoId:523,
+        userName:"sekansofficial",
+        follower:"dev_software"
+    }
+]
+const reccomendDOM = document.querySelector('.reccomended-account')
+reccomendDOM.innerHTML= reccomendAccount.map(item=>{
+    return `
+    <div class="mt-4 d-flex pl-2 align-items-center account-detail">
+    <img src="https://picsum.photos/id/${item.photoId}/45/45" class="rounded-circle" alt="profile">
+                    <div class="row ml-2 small-font d-block">
+                        <smal class="d-flex  text-light fw-lighter">${item.userName}</smal>
+                        <small>${item.follower} takip ediyor</small>
+                    </div>
+                    <a href="#">Takip</a>
+    </div>`        
+}).join('');
