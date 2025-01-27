@@ -148,7 +148,7 @@ postsDOM.innerHTML=postInfo.map(item => {
                             <img src="https://picsum.photos/id/${item.postImageLink}/500/500" class="border border-secondary" >
                         </div>
                         <!--Post Action Field-->
-                        <div class="mt-1 d-flex  align-items-center">
+                        <div class="mt-1 d-flex align-items-center " id="action">
                             <img class="mr-1 pl-5" src="https://img.icons8.com/?size=25&id=64767&format=png&color=ffffff">
                             <img class="mr-1" src="https://img.icons8.com/?size=28&id=GpyMr0gdGBwS&format=png&color=ffffff">
                             <img class="mr-1" src="https://img.icons8.com/?size=25&id=Zxm3j29AHmq6&format=png&color=ffffff">
@@ -172,6 +172,17 @@ postsDOM.innerHTML=postInfo.map(item => {
                             <img src="https://img.icons8.com/?size=15&id=-Znk8-vv55Es&format=png&color=ffffff" class="px-4">
                         </div>`
 }).join('')
+
+//Change the color of Like, comment icon with hover
+document.querySelectorAll('#action img').forEach(img=>{
+    const originalSrc = img.src;
+    img.addEventListener('mouseover',()=>{
+        img.src = originalSrc.replace('color=ffffff', 'color=adadad');
+    });
+    img.addEventListener('mouseout', ()=>{
+        img.src=originalSrc;
+    })
+})
 
 // const accountDetailDOM = document.querySelector('.account-detail');
 // accountDetailDOM.innerHTML=`<img src="https://picsum.photos/id/23/45/45" class="rounded-circle" alt="profile">
@@ -208,7 +219,7 @@ const reccomendAccount = [
 const reccomendDOM = document.querySelector('.reccomended-account')
 reccomendDOM.innerHTML= reccomendAccount.map(item=>{
     return `
-    <div class="mt-4 d-flex pl-2 align-items-center account-detail">
+    <div class="mt-3 d-flex pl-2 align-items-center account-detail">
     <img src="https://picsum.photos/id/${item.photoId}/45/45" class="rounded-circle" alt="profile">
                     <div class="row ml-2 small-font d-block">
                         <smal class="d-flex  text-light fw-lighter">${item.userName}</smal>
